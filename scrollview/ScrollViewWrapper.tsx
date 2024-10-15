@@ -1,17 +1,17 @@
 // https://github.com/APSL/react-native-keyboard-aware-scroll-view
 // https://stackoverflow.com/questions/72300441/keyboardawarescrollview-props-innerref-scrolltoend-not-working
 // https://github.com/facebook/react-native/issues/24531
-import React, {Ref, forwardRef, useImperativeHandle, useRef} from 'react';
-import {memo} from 'react';
+import React, { Ref, forwardRef, useImperativeHandle, useRef } from "react";
+import { memo } from "react";
 // import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-controller';
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import {
   RefreshControlProps,
   ScrollView,
   ScrollViewProps,
   StyleProp,
   ViewStyle,
-} from 'react-native';
+} from "react-native";
 
 export interface WScrollViewRef {
   scrollViewCurrentRef: any;
@@ -34,7 +34,7 @@ const WScrollView = forwardRef(
       contentContainerKASVStyle,
       ...props
     }: WScrollViewProps,
-    ref: Ref<WScrollViewRef>,
+    ref: Ref<WScrollViewRef>
   ) => {
     const scrollRef = useRef<any>(null);
     const keyboardAwareScrollRef = useRef<any>(null);
@@ -71,7 +71,7 @@ const WScrollView = forwardRef(
         {children}
       </KeyboardAwareScrollView>
     );
-  },
+  }
 );
 
 export default memo(WScrollView);
